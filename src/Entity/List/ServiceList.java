@@ -6,6 +6,7 @@
 package Entity.List;
 
 import Entity.Service;
+import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -20,9 +21,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class ServiceList {
     @XmlElement(name = "Service")
-    private List<Service> listService = null;
+    private List<Service> listService;
 
     public ServiceList() {
+        listService = new ArrayList<>();
     }
 
     public List<Service> getListService() {

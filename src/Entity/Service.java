@@ -25,12 +25,12 @@ public class Service {
     @XmlElement(name = "Price")
     private int price;
     @XmlElement(name = "Status")
-    private boolean status;
+    private int status;
 
     public Service() {
     }
 
-    public Service(int serviceId, String name, int price, boolean status) {
+    public Service(int serviceId, String name, int price, int status) {
         this.serviceId = serviceId;
         this.name = name;
         this.price = price;
@@ -61,11 +61,11 @@ public class Service {
         this.price = price;
     }
 
-    public boolean isStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
     

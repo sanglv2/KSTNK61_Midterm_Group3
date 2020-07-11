@@ -5,12 +5,17 @@
  */
 package View;
 
+import View.Information.AccountInformation;
+import View.Information.ServiceInformation;
+import Common.Constants;
 import Entity.Manager;
 import Entity.Service;
 import Model.ServiceModel;
 import java.awt.HeadlessException;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,8 +25,7 @@ import javax.swing.table.DefaultTableModel;
 public class Management extends javax.swing.JFrame {
 
     private Manager manager;
-    
-    private DefaultTableModel serviceModel;
+
     /**
      * Creates new form MainApp
      */
@@ -83,7 +87,7 @@ public class Management extends javax.swing.JFrame {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -100,9 +104,17 @@ public class Management extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(serviceTable);
+        if (serviceTable.getColumnModel().getColumnCount() > 0) {
+            serviceTable.getColumnModel().getColumn(0).setPreferredWidth(20);
+        }
 
         jButton1.setText("Xóa dịch vụ");
         jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cập nhật");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +124,11 @@ public class Management extends javax.swing.JFrame {
         });
 
         jButton3.setText("Thêm dịch vụ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Tìm kiếm");
 
@@ -123,7 +140,7 @@ public class Management extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
@@ -141,13 +158,13 @@ public class Management extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton3))
                 .addContainerGap())
         );
 
@@ -273,6 +290,14 @@ public class Management extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_serviceTableMouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new ServiceInformation(this, null, Constants.SERVICE_ADD).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        removeService();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -330,15 +355,12 @@ public class Management extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void initManagement() {
-        serviceModel = (DefaultTableModel) serviceTable.getModel();
-        List<Service> listService = ServiceModel.INST.getListAll();
-        
-        listService.forEach(service -> serviceModel.addRow(new Object[]{ service.getServiceId(), service.getName(), service.getPrice(), service.isStatus() }));
+        loadServiceTable();
     }
 
     private void quitApplication() {
         int result = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
+
         if (result == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
@@ -346,10 +368,57 @@ public class Management extends javax.swing.JFrame {
 
     private void updateService() {
         int row = serviceTable.getSelectedRow();
-        
+
         if (row >= 0) {
-            int serviceId = (int) serviceModel.getValueAt(row, 0);
-            new ServiceInformation(this, ServiceModel.INST.MAP.get(serviceId)).setVisible(true);
+            int serviceId = (int) ((DefaultTableModel) serviceTable.getModel()).getValueAt(row, 0);
+            new ServiceInformation(this, ServiceModel.INST.MAP.get(serviceId), Constants.SERVICE_UPDATE).setVisible(true);
+        }
+    }
+
+    private void loadServiceTable() {
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        serviceTable.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
+        
+        DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
+        while (serviceModel.getRowCount() > 0) {
+            serviceModel.removeRow(0);
+        }
+
+        List<Service> listService = ServiceModel.INST.getListAll();
+        listService.forEach(service -> serviceModel.addRow(new Object[]{service.getServiceId(), service.getName(), service.getPrice(), (service.getStatus() & Constants.SERVICE_STATUS_ACTIVE) > 0}));
+    }
+
+    public void addService(int serviceId, String name, int price, int status) {
+        DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
+        serviceModel.addRow(new Object[]{serviceId, name, price, (status & Constants.SERVICE_STATUS_ACTIVE) > 0});
+    }
+
+    public void updateService(int serviceId, String name, int price, int status) {
+        DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
+
+        for (int row = 0; row < serviceModel.getRowCount(); row++) {
+            if ((int) serviceModel.getValueAt(row, 0) == serviceId) {
+                serviceModel.setValueAt(name, row, 1);
+                serviceModel.setValueAt(price, row, 2);
+                serviceModel.setValueAt((status & Constants.SERVICE_STATUS_ACTIVE) > 0, row, 3);
+            }
+        }
+    }
+
+    private void removeService() {
+        int row = serviceTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) serviceTable.getModel();
+
+        if (row >= 0) {
+            int serviceId = (int) model.getValueAt(row, 0);
+
+            if (ServiceModel.INST.removeService(serviceId)) {
+                model.removeRow(row);
+                JOptionPane.showMessageDialog(this, "Xóa dịch vụ thành công", "Thành công", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
