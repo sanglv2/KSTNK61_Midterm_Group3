@@ -37,9 +37,8 @@ public class ManagerModel {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             ManagerList list = (ManagerList) jaxbUnmarshaller.unmarshal(new File("resource/manager.xml"));
 
-            this.listManager = list.getListStudent();
+            this.listManager = list.getListManager();
         } catch (JAXBException e) {
-            e.printStackTrace();
             this.listManager = new ArrayList<>();
         }
     }

@@ -25,12 +25,12 @@ public class ManagerList {
     public ManagerList() {
     }
 
-    public List<Manager> getListStudent() {
+    public List<Manager> getListManager() {
         return listManager;
     }
 
-    public void setListStudent(List<Manager> listStudent) {
-        this.listManager = listStudent;
+    public void setListManager(List<Manager> listManager) {
+        this.listManager = listManager;
     }
 }
 
