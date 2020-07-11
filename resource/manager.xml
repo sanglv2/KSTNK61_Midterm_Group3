@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagerList>
+	<Manager>
+		<ManagerId>1</ManagerId>
+		<Name>Cooper G. Potter</Name>
+		<DOB>13/05/1999</DOB>
+		<Gender>Male</Gender>
+		<Phone>195-18-03-790</Phone>
+		<Address>940-9480 Phasellus St.</Address>
+		<Username>Sed</Username>
+		<Password>nisi</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>2</ManagerId>
+		<Name>Emma W. Battle</Name>
+		<DOB>16/03/1966</DOB>
+		<Gender>Female</Gender>
+		<Phone>652-00-86-268</Phone>
+		<Address>P.O. Box 693, 9208 Quis St.</Address>
+		<Username>feugiat</Username>
+		<Password>cursus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>3</ManagerId>
+		<Name>Andrew R. Nunez</Name>
+		<DOB>17/09/1976</DOB>
+		<Gender>Male</Gender>
+		<Phone>335-84-51-702</Phone>
+		<Address>P.O. Box 383, 2235 Aliquet, Ave</Address>
+		<Username>aliquam</Username>
+		<Password>libero</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>4</ManagerId>
+		<Name>Giselle Humphrey</Name>
+		<DOB>15/02/1981</DOB>
+		<Gender>Female</Gender>
+		<Phone>488-66-57-243</Phone>
+		<Address>P.O. Box 369, 1122 Sollicitudin St.</Address>
+		<Username>mi</Username>
+		<Password>et</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>5</ManagerId>
+		<Name>Tiger P. Boyer</Name>
+		<DOB>31/07/1992</DOB>
+		<Gender>Female</Gender>
+		<Phone>132-65-01-329</Phone>
+		<Address>8269 Leo. Rd.</Address>
+		<Username>at,</Username>
+		<Password>sed</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>6</ManagerId>
+		<Name>Bernard O. Dunlap</Name>
+		<DOB>19/01/1996</DOB>
+		<Gender>Female</Gender>
+		<Phone>185-50-39-646</Phone>
+		<Address>3313 Mauris St.</Address>
+		<Username>vel</Username>
+		<Password>faucibus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>7</ManagerId>
+		<Name>Orlando Ware</Name>
+		<DOB>07/04/1966</DOB>
+		<Gender>Male</Gender>
+		<Phone>724-96-00-637</Phone>
+		<Address>Ap #982-9246 Nec, Street</Address>
+		<Username>cursus</Username>
+		<Password>pharetra</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>8</ManagerId>
+		<Name>Evelyn Sheppard</Name>
+		<DOB>01/08/1986</DOB>
+		<Gender>Female</Gender>
+		<Phone>573-99-46-008</Phone>
+		<Address>9909 Et Ave</Address>
+		<Username>in</Username>
+		<Password>nec</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>9</ManagerId>
+		<Name>Hayden Y. Finch</Name>
+		<DOB>15/12/1953</DOB>
+		<Gender>Male</Gender>
+		<Phone>737-12-37-323</Phone>
+		<Address>Ap #911-1760 Ac St.</Address>
+		<Username>elit.</Username>
+		<Password>ut</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>10</ManagerId>
+		<Name>Raymond Good</Name>
+		<DOB>06/09/1988</DOB>
+		<Gender>Female</Gender>
+		<Phone>278-35-19-187</Phone>
+		<Address>326-1086 Ut St.</Address>
+		<Username>lacinia</Username>
+		<Password>lectus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>11</ManagerId>
+		<Name>Carl Hicks</Name>
+		<DOB>23/11/1979</DOB>
+		<Gender>Male</Gender>
+		<Phone>241-08-26-347</Phone>
+		<Address>Ap #734-9258 Aliquam Rd.</Address>
+		<Username>posuere,</Username>
+		<Password>risus.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>12</ManagerId>
+		<Name>Xerxes L. Herring</Name>
+		<DOB>05/12/1997</DOB>
+		<Gender>Female</Gender>
+		<Phone>356-50-32-747</Phone>
+		<Address>P.O. Box 415, 7867 Cursus Road</Address>
+		<Username>Aenean</Username>
+		<Password>magna</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>13</ManagerId>
+		<Name>Jelani Valdez</Name>
+		<DOB>05/01/1962</DOB>
+		<Gender>Male</Gender>
+		<Phone>850-93-95-499</Phone>
+		<Address>P.O. Box 366, 4482 Neque. St.</Address>
+		<Username>mauris</Username>
+		<Password>gravida</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>14</ManagerId>
+		<Name>Iliana H. Jimenez</Name>
+		<DOB>28/03/1988</DOB>
+		<Gender>Female</Gender>
+		<Phone>329-58-84-829</Phone>
+		<Address>226-4599 A, Road</Address>
+		<Username>a,</Username>
+		<Password>bibendum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>15</ManagerId>
+		<Name>Gretchen I. Faulkner</Name>
+		<DOB>06/11/1977</DOB>
+		<Gender>Male</Gender>
+		<Phone>279-48-02-930</Phone>
+		<Address>256-8250 Curabitur Avenue</Address>
+		<Username>turpis</Username>
+		<Password>fringilla</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>16</ManagerId>
+		<Name>Merrill Potts</Name>
+		<DOB>20/07/1992</DOB>
+		<Gender>Female</Gender>
+		<Phone>149-24-00-184</Phone>
+		<Address>889-4790 Nisl. Rd.</Address>
+		<Username>laoreet</Username>
+		<Password>sed</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>17</ManagerId>
+		<Name>Dacey Ward</Name>
+		<DOB>15/09/1960</DOB>
+		<Gender>Female</Gender>
+		<Phone>649-75-56-001</Phone>
+		<Address>P.O. Box 506, 4184 Phasellus Ave</Address>
+		<Username>ornare</Username>
+		<Password>Cras</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>18</ManagerId>
+		<Name>Jael E. Leblanc</Name>
+		<DOB>18/01/1971</DOB>
+		<Gender>Female</Gender>
+		<Phone>913-24-78-053</Phone>
+		<Address>795-5936 Fusce Rd.</Address>
+		<Username>imperdiet,</Username>
+		<Password>Nullam</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>19</ManagerId>
+		<Name>Isaiah K. Marshall</Name>
+		<DOB>06/04/1968</DOB>
+		<Gender>Male</Gender>
+		<Phone>789-49-04-177</Phone>
+		<Address>898-3182 Malesuada Rd.</Address>
+		<Username>turpis</Username>
+		<Password>enim,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>20</ManagerId>
+		<Name>Catherine A. Hart</Name>
+		<DOB>06/03/1971</DOB>
+		<Gender>Female</Gender>
+		<Phone>604-12-99-594</Phone>
+		<Address>321-6318 Arcu Rd.</Address>
+		<Username>vestibulum</Username>
+		<Password>metus.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>21</ManagerId>
+		<Name>Wynter Francis</Name>
+		<DOB>05/10/1979</DOB>
+		<Gender>Male</Gender>
+		<Phone>494-35-26-672</Phone>
+		<Address>7882 In Av.</Address>
+		<Username>consequat</Username>
+		<Password>aliquet,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>22</ManagerId>
+		<Name>Chaim Bruce</Name>
+		<DOB>28/05/1952</DOB>
+		<Gender>Male</Gender>
+		<Phone>681-99-78-046</Phone>
+		<Address>Ap #492-4417 Sem Ave</Address>
+		<Username>tincidunt</Username>
+		<Password>Sed</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>23</ManagerId>
+		<Name>Charity G. Cote</Name>
+		<DOB>09/06/1962</DOB>
+		<Gender>Male</Gender>
+		<Phone>325-12-72-523</Phone>
+		<Address>P.O. Box 146, 8760 Auctor, Ave</Address>
+		<Username>egestas</Username>
+		<Password>lorem</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>24</ManagerId>
+		<Name>Ivory M. Cantu</Name>
+		<DOB>21/07/1994</DOB>
+		<Gender>Male</Gender>
+		<Phone>872-44-08-240</Phone>
+		<Address>P.O. Box 945, 6857 Semper. Avenue</Address>
+		<Username>diam</Username>
+		<Password>Morbi</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>25</ManagerId>
+		<Name>Halla K. Avery</Name>
+		<DOB>13/10/1955</DOB>
+		<Gender>Female</Gender>
+		<Phone>167-89-10-321</Phone>
+		<Address>8816 Euismod St.</Address>
+		<Username>vulputate,</Username>
+		<Password>mus.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>26</ManagerId>
+		<Name>Richard X. Underwood</Name>
+		<DOB>21/11/1994</DOB>
+		<Gender>Female</Gender>
+		<Phone>279-11-15-437</Phone>
+		<Address>Ap #640-5607 Cras Av.</Address>
+		<Username>est.</Username>
+		<Password>justo</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>27</ManagerId>
+		<Name>Kay I. Knight</Name>
+		<DOB>22/03/1997</DOB>
+		<Gender>Female</Gender>
+		<Phone>229-81-40-974</Phone>
+		<Address>Ap #330-5898 Cras Street</Address>
+		<Username>nec</Username>
+		<Password>a</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>28</ManagerId>
+		<Name>Jael I. Saunders</Name>
+		<DOB>09/01/1985</DOB>
+		<Gender>Male</Gender>
+		<Phone>565-85-40-041</Phone>
+		<Address>3105 Cras St.</Address>
+		<Username>Nullam</Username>
+		<Password>Curabitur</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>29</ManagerId>
+		<Name>Louis Miles</Name>
+		<DOB>21/06/1951</DOB>
+		<Gender>Female</Gender>
+		<Phone>642-13-37-053</Phone>
+		<Address>956-3333 Molestie St.</Address>
+		<Username>metus</Username>
+		<Password>nisl</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>30</ManagerId>
+		<Name>Odysseus Vega</Name>
+		<DOB>25/08/1963</DOB>
+		<Gender>Male</Gender>
+		<Phone>365-34-63-238</Phone>
+		<Address>P.O. Box 786, 8079 Augue Road</Address>
+		<Username>risus.</Username>
+		<Password>lectus.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>31</ManagerId>
+		<Name>Britanney Blanchard</Name>
+		<DOB>02/12/1986</DOB>
+		<Gender>Male</Gender>
+		<Phone>216-11-85-424</Phone>
+		<Address>3091 In, Av.</Address>
+		<Username>mollis.</Username>
+		<Password>condimentum.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>32</ManagerId>
+		<Name>Willow Palmer</Name>
+		<DOB>09/01/1953</DOB>
+		<Gender>Female</Gender>
+		<Phone>103-87-32-424</Phone>
+		<Address>P.O. Box 911, 1852 Vivamus Rd.</Address>
+		<Username>ligula.</Username>
+		<Password>Quisque</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>33</ManagerId>
+		<Name>Bianca C. Black</Name>
+		<DOB>31/03/1997</DOB>
+		<Gender>Male</Gender>
+		<Phone>456-71-46-539</Phone>
+		<Address>P.O. Box 844, 9146 At, St.</Address>
+		<Username>imperdiet</Username>
+		<Password>amet</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>34</ManagerId>
+		<Name>Fitzgerald Bailey</Name>
+		<DOB>19/12/1975</DOB>
+		<Gender>Female</Gender>
+		<Phone>555-31-09-642</Phone>
+		<Address>P.O. Box 185, 5186 Faucibus. Ave</Address>
+		<Username>vel</Username>
+		<Password>varius</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>35</ManagerId>
+		<Name>Camille Rutledge</Name>
+		<DOB>28/07/1975</DOB>
+		<Gender>Male</Gender>
+		<Phone>575-70-25-045</Phone>
+		<Address>6130 Lacus. Street</Address>
+		<Username>pellentesque</Username>
+		<Password>id</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>36</ManagerId>
+		<Name>Mona Rosales</Name>
+		<DOB>25/07/1979</DOB>
+		<Gender>Female</Gender>
+		<Phone>635-37-80-930</Phone>
+		<Address>P.O. Box 601, 9137 Luctus Ave</Address>
+		<Username>eu,</Username>
+		<Password>dictum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>37</ManagerId>
+		<Name>Bethany Jensen</Name>
+		<DOB>11/11/1996</DOB>
+		<Gender>Female</Gender>
+		<Phone>233-08-88-928</Phone>
+		<Address>7672 Sed Rd.</Address>
+		<Username>ipsum</Username>
+		<Password>pede.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>38</ManagerId>
+		<Name>Lane Skinner</Name>
+		<DOB>05/02/1993</DOB>
+		<Gender>Female</Gender>
+		<Phone>317-41-61-569</Phone>
+		<Address>P.O. Box 304, 3563 Aliquam St.</Address>
+		<Username>nunc,</Username>
+		<Password>In</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>39</ManagerId>
+		<Name>Jonas T. Pittman</Name>
+		<DOB>07/07/1967</DOB>
+		<Gender>Female</Gender>
+		<Phone>670-16-92-969</Phone>
+		<Address>2750 A Av.</Address>
+		<Username>feugiat</Username>
+		<Password>dolor</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>40</ManagerId>
+		<Name>Griffith Shepard</Name>
+		<DOB>19/07/1955</DOB>
+		<Gender>Male</Gender>
+		<Phone>477-60-62-597</Phone>
+		<Address>966-2708 Lorem Ave</Address>
+		<Username>Pellentesque</Username>
+		<Password>dolor.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>41</ManagerId>
+		<Name>Gail Mccullough</Name>
+		<DOB>17/12/1972</DOB>
+		<Gender>Male</Gender>
+		<Phone>474-41-22-281</Phone>
+		<Address>3880 Dignissim St.</Address>
+		<Username>volutpat.</Username>
+		<Password>aliquet</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>42</ManagerId>
+		<Name>Yoshi Blevins</Name>
+		<DOB>16/10/1999</DOB>
+		<Gender>Male</Gender>
+		<Phone>843-23-66-131</Phone>
+		<Address>Ap #435-4936 Nam Avenue</Address>
+		<Username>dapibus</Username>
+		<Password>Curabitur</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>43</ManagerId>
+		<Name>Sheila Stanley</Name>
+		<DOB>13/07/1996</DOB>
+		<Gender>Male</Gender>
+		<Phone>573-53-85-692</Phone>
+		<Address>4639 Eget Street</Address>
+		<Username>ac</Username>
+		<Password>ac</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>44</ManagerId>
+		<Name>Medge Glenn</Name>
+		<DOB>27/11/1950</DOB>
+		<Gender>Male</Gender>
+		<Phone>569-77-09-597</Phone>
+		<Address>Ap #733-5519 Risus. St.</Address>
+		<Username>id</Username>
+		<Password>sem,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>45</ManagerId>
+		<Name>Quamar Mckee</Name>
+		<DOB>17/05/1977</DOB>
+		<Gender>Male</Gender>
+		<Phone>580-71-58-022</Phone>
+		<Address>244-4925 Natoque St.</Address>
+		<Username>id,</Username>
+		<Password>aliquet</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>46</ManagerId>
+		<Name>Victor Frank</Name>
+		<DOB>11/08/1980</DOB>
+		<Gender>Male</Gender>
+		<Phone>574-01-22-858</Phone>
+		<Address>554-3740 Non, St.</Address>
+		<Username>mauris</Username>
+		<Password>ut</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>47</ManagerId>
+		<Name>Iola V. Pearson</Name>
+		<DOB>24/04/1996</DOB>
+		<Gender>Male</Gender>
+		<Phone>958-67-73-932</Phone>
+		<Address>469-494 Aliquam Rd.</Address>
+		<Username>magna.</Username>
+		<Password>ac</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>48</ManagerId>
+		<Name>Macaulay Beach</Name>
+		<DOB>09/12/1983</DOB>
+		<Gender>Female</Gender>
+		<Phone>660-90-65-157</Phone>
+		<Address>3509 Volutpat. Street</Address>
+		<Username>gravida</Username>
+		<Password>velit</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>49</ManagerId>
+		<Name>Levi Waller</Name>
+		<DOB>16/10/1966</DOB>
+		<Gender>Male</Gender>
+		<Phone>215-50-24-626</Phone>
+		<Address>Ap #691-6766 Mi Rd.</Address>
+		<Username>tortor</Username>
+		<Password>arcu.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>50</ManagerId>
+		<Name>Christian Harrington</Name>
+		<DOB>30/08/1974</DOB>
+		<Gender>Female</Gender>
+		<Phone>865-94-07-503</Phone>
+		<Address>963-8698 Ornare, St.</Address>
+		<Username>Praesent</Username>
+		<Password>dictum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>51</ManagerId>
+		<Name>Elijah Munoz</Name>
+		<DOB>23/09/1964</DOB>
+		<Gender>Male</Gender>
+		<Phone>995-67-23-169</Phone>
+		<Address>6448 Arcu Rd.</Address>
+		<Username>Nunc</Username>
+		<Password>dapibus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>52</ManagerId>
+		<Name>Paki J. Burns</Name>
+		<DOB>23/02/1996</DOB>
+		<Gender>Male</Gender>
+		<Phone>600-95-84-875</Phone>
+		<Address>Ap #347-9708 Adipiscing. Rd.</Address>
+		<Username>nec,</Username>
+		<Password>ipsum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>53</ManagerId>
+		<Name>Wynne H. Vincent</Name>
+		<DOB>03/10/1970</DOB>
+		<Gender>Male</Gender>
+		<Phone>579-60-39-599</Phone>
+		<Address>P.O. Box 521, 7450 Vitae St.</Address>
+		<Username>interdum.</Username>
+		<Password>Vestibulum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>54</ManagerId>
+		<Name>Camille F. Waters</Name>
+		<DOB>26/06/1973</DOB>
+		<Gender>Female</Gender>
+		<Phone>978-97-42-202</Phone>
+		<Address>Ap #576-5784 Ultrices, Street</Address>
+		<Username>Aliquam</Username>
+		<Password>lacus.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>55</ManagerId>
+		<Name>Kylie W. Mccoy</Name>
+		<DOB>02/02/1951</DOB>
+		<Gender>Male</Gender>
+		<Phone>102-98-22-129</Phone>
+		<Address>1116 Montes, Avenue</Address>
+		<Username>egestas.</Username>
+		<Password>Mauris</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>56</ManagerId>
+		<Name>Leandra Z. Oneil</Name>
+		<DOB>14/10/1986</DOB>
+		<Gender>Male</Gender>
+		<Phone>518-48-05-475</Phone>
+		<Address>Ap #365-6762 Nullam Street</Address>
+		<Username>accumsan</Username>
+		<Password>vitae</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>57</ManagerId>
+		<Name>Wendy C. Mcclure</Name>
+		<DOB>18/10/1965</DOB>
+		<Gender>Female</Gender>
+		<Phone>255-41-26-829</Phone>
+		<Address>P.O. Box 307, 8716 Sagittis St.</Address>
+		<Username>imperdiet</Username>
+		<Password>bibendum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>58</ManagerId>
+		<Name>Reece Pierce</Name>
+		<DOB>29/08/1973</DOB>
+		<Gender>Male</Gender>
+		<Phone>297-09-33-978</Phone>
+		<Address>303-1864 At Ave</Address>
+		<Username>nec,</Username>
+		<Password>urna.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>59</ManagerId>
+		<Name>Mufutau N. Juarez</Name>
+		<DOB>04/02/1972</DOB>
+		<Gender>Male</Gender>
+		<Phone>802-91-67-541</Phone>
+		<Address>P.O. Box 701, 4196 Donec St.</Address>
+		<Username>orci</Username>
+		<Password>nibh.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>60</ManagerId>
+		<Name>Irma I. Sanders</Name>
+		<DOB>25/01/1983</DOB>
+		<Gender>Male</Gender>
+		<Phone>893-54-80-110</Phone>
+		<Address>1323 Elementum St.</Address>
+		<Username>arcu.</Username>
+		<Password>odio</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>61</ManagerId>
+		<Name>Bruce F. Singleton</Name>
+		<DOB>08/07/1986</DOB>
+		<Gender>Female</Gender>
+		<Phone>145-25-57-267</Phone>
+		<Address>5092 Nam Road</Address>
+		<Username>euismod</Username>
+		<Password>Fusce</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>62</ManagerId>
+		<Name>Noel O. Lang</Name>
+		<DOB>19/06/1962</DOB>
+		<Gender>Female</Gender>
+		<Phone>737-78-71-552</Phone>
+		<Address>Ap #697-3357 Dis Av.</Address>
+		<Username>a</Username>
+		<Password>vitae</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>63</ManagerId>
+		<Name>Cairo Johnson</Name>
+		<DOB>12/06/1950</DOB>
+		<Gender>Female</Gender>
+		<Phone>337-68-11-268</Phone>
+		<Address>6517 Orci, Street</Address>
+		<Username>eu</Username>
+		<Password>nibh.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>64</ManagerId>
+		<Name>Desiree Barlow</Name>
+		<DOB>18/02/1992</DOB>
+		<Gender>Male</Gender>
+		<Phone>185-32-82-954</Phone>
+		<Address>P.O. Box 306, 8965 Nam Road</Address>
+		<Username>luctus</Username>
+		<Password>libero.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>65</ManagerId>
+		<Name>Rebekah Cabrera</Name>
+		<DOB>30/07/1998</DOB>
+		<Gender>Female</Gender>
+		<Phone>894-22-33-118</Phone>
+		<Address>Ap #154-618 Lacinia Av.</Address>
+		<Username>turpis.</Username>
+		<Password>Integer</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>66</ManagerId>
+		<Name>Lydia G. Lester</Name>
+		<DOB>26/10/1973</DOB>
+		<Gender>Male</Gender>
+		<Phone>232-21-09-466</Phone>
+		<Address>P.O. Box 946, 861 Suspendisse St.</Address>
+		<Username>parturient</Username>
+		<Password>non,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>67</ManagerId>
+		<Name>Deirdre L. Duran</Name>
+		<DOB>20/05/1964</DOB>
+		<Gender>Female</Gender>
+		<Phone>214-71-10-242</Phone>
+		<Address>153-6076 Suspendisse St.</Address>
+		<Username>Nulla</Username>
+		<Password>non,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>68</ManagerId>
+		<Name>Signe Morris</Name>
+		<DOB>23/10/1980</DOB>
+		<Gender>Female</Gender>
+		<Phone>475-00-41-393</Phone>
+		<Address>3327 Purus Ave</Address>
+		<Username>eu,</Username>
+		<Password>porttitor</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>69</ManagerId>
+		<Name>Baker Carver</Name>
+		<DOB>17/05/1962</DOB>
+		<Gender>Male</Gender>
+		<Phone>550-36-29-328</Phone>
+		<Address>P.O. Box 502, 7426 Vulputate Street</Address>
+		<Username>quis,</Username>
+		<Password>leo.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>70</ManagerId>
+		<Name>Blaze Livingston</Name>
+		<DOB>23/10/1974</DOB>
+		<Gender>Female</Gender>
+		<Phone>584-23-59-595</Phone>
+		<Address>3918 Phasellus Road</Address>
+		<Username>Sed</Username>
+		<Password>dolor,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>71</ManagerId>
+		<Name>Clayton Dorsey</Name>
+		<DOB>14/08/1956</DOB>
+		<Gender>Male</Gender>
+		<Phone>341-88-29-125</Phone>
+		<Address>986 Ut, Rd.</Address>
+		<Username>at,</Username>
+		<Password>Sed</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>72</ManagerId>
+		<Name>Portia Henry</Name>
+		<DOB>26/12/1986</DOB>
+		<Gender>Female</Gender>
+		<Phone>915-50-58-665</Phone>
+		<Address>Ap #278-105 Eu Rd.</Address>
+		<Username>feugiat</Username>
+		<Password>ridiculus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>73</ManagerId>
+		<Name>Fleur Hernandez</Name>
+		<DOB>21/11/1988</DOB>
+		<Gender>Male</Gender>
+		<Phone>230-15-96-614</Phone>
+		<Address>263-3977 Eleifend Rd.</Address>
+		<Username>orci</Username>
+		<Password>sit</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>74</ManagerId>
+		<Name>Buffy U. Santiago</Name>
+		<DOB>13/05/1965</DOB>
+		<Gender>Male</Gender>
+		<Phone>600-24-20-985</Phone>
+		<Address>837-1666 Nunc St.</Address>
+		<Username>lobortis</Username>
+		<Password>nonummy</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>75</ManagerId>
+		<Name>Jessamine S. David</Name>
+		<DOB>31/01/1966</DOB>
+		<Gender>Male</Gender>
+		<Phone>155-66-26-231</Phone>
+		<Address>726-5883 Phasellus Rd.</Address>
+		<Username>Quisque</Username>
+		<Password>tristique</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>76</ManagerId>
+		<Name>Rebecca Frost</Name>
+		<DOB>23/03/1985</DOB>
+		<Gender>Female</Gender>
+		<Phone>326-81-40-892</Phone>
+		<Address>P.O. Box 345, 5050 Convallis St.</Address>
+		<Username>nisl</Username>
+		<Password>nec</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>77</ManagerId>
+		<Name>Venus K. Coleman</Name>
+		<DOB>28/04/1981</DOB>
+		<Gender>Female</Gender>
+		<Phone>662-75-03-101</Phone>
+		<Address>P.O. Box 835, 5769 Elementum Av.</Address>
+		<Username>lacus.</Username>
+		<Password>Sed</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>78</ManagerId>
+		<Name>William G. Sargent</Name>
+		<DOB>02/02/1995</DOB>
+		<Gender>Male</Gender>
+		<Phone>853-88-97-221</Phone>
+		<Address>P.O. Box 595, 7267 Sed St.</Address>
+		<Username>varius.</Username>
+		<Password>aptent</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>79</ManagerId>
+		<Name>Lamar Coleman</Name>
+		<DOB>11/02/1972</DOB>
+		<Gender>Male</Gender>
+		<Phone>554-94-45-044</Phone>
+		<Address>9868 Tortor, Road</Address>
+		<Username>odio,</Username>
+		<Password>Cras</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>80</ManagerId>
+		<Name>Drake Jennings</Name>
+		<DOB>12/10/1971</DOB>
+		<Gender>Female</Gender>
+		<Phone>452-10-65-917</Phone>
+		<Address>P.O. Box 261, 7534 Massa. Rd.</Address>
+		<Username>magna</Username>
+		<Password>vel</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>81</ManagerId>
+		<Name>Malcolm Williams</Name>
+		<DOB>31/10/1957</DOB>
+		<Gender>Male</Gender>
+		<Phone>549-50-40-762</Phone>
+		<Address>520 Nulla Road</Address>
+		<Username>Nullam</Username>
+		<Password>scelerisque</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>82</ManagerId>
+		<Name>Martha Rhodes</Name>
+		<DOB>21/11/1964</DOB>
+		<Gender>Female</Gender>
+		<Phone>725-01-27-065</Phone>
+		<Address>Ap #932-9753 Curabitur Avenue</Address>
+		<Username>sem</Username>
+		<Password>Fusce</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>83</ManagerId>
+		<Name>Madonna M. Little</Name>
+		<DOB>24/05/1953</DOB>
+		<Gender>Male</Gender>
+		<Phone>732-77-84-062</Phone>
+		<Address>P.O. Box 450, 3097 Blandit Road</Address>
+		<Username>iaculis</Username>
+		<Password>ante.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>84</ManagerId>
+		<Name>Lenore K. Flowers</Name>
+		<DOB>28/04/1980</DOB>
+		<Gender>Female</Gender>
+		<Phone>740-07-70-524</Phone>
+		<Address>P.O. Box 448, 450 Accumsan Rd.</Address>
+		<Username>vel,</Username>
+		<Password>ipsum.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>85</ManagerId>
+		<Name>Libby J. Wright</Name>
+		<DOB>30/11/1970</DOB>
+		<Gender>Female</Gender>
+		<Phone>144-32-06-269</Phone>
+		<Address>847-5548 Ultrices Rd.</Address>
+		<Username>purus.</Username>
+		<Password>commodo</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>86</ManagerId>
+		<Name>Renee Murphy</Name>
+		<DOB>27/11/1993</DOB>
+		<Gender>Male</Gender>
+		<Phone>414-97-17-801</Phone>
+		<Address>P.O. Box 426, 6075 Quis Rd.</Address>
+		<Username>sit</Username>
+		<Password>nec,</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>87</ManagerId>
+		<Name>Glenna I. Watkins</Name>
+		<DOB>05/02/1951</DOB>
+		<Gender>Female</Gender>
+		<Phone>767-32-73-419</Phone>
+		<Address>Ap #717-1790 Dapibus Avenue</Address>
+		<Username>cursus</Username>
+		<Password>dictum</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>88</ManagerId>
+		<Name>Madonna Gallegos</Name>
+		<DOB>05/06/1993</DOB>
+		<Gender>Male</Gender>
+		<Phone>151-28-66-842</Phone>
+		<Address>415-3289 Auctor Road</Address>
+		<Username>lacus.</Username>
+		<Password>Integer</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>89</ManagerId>
+		<Name>Elmo K. Watson</Name>
+		<DOB>15/01/1991</DOB>
+		<Gender>Male</Gender>
+		<Phone>313-16-41-439</Phone>
+		<Address>223-1672 Amet Avenue</Address>
+		<Username>pede.</Username>
+		<Password>dui</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>90</ManagerId>
+		<Name>Allistair L. Reilly</Name>
+		<DOB>15/11/1956</DOB>
+		<Gender>Male</Gender>
+		<Phone>744-82-42-459</Phone>
+		<Address>766-5085 Et, Street</Address>
+		<Username>Cras</Username>
+		<Password>ac</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>91</ManagerId>
+		<Name>Hyacinth Reeves</Name>
+		<DOB>21/06/1963</DOB>
+		<Gender>Male</Gender>
+		<Phone>736-68-03-910</Phone>
+		<Address>727-1167 Faucibus Rd.</Address>
+		<Username>mollis</Username>
+		<Password>arcu</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>92</ManagerId>
+		<Name>Martena A. Stanley</Name>
+		<DOB>27/04/1975</DOB>
+		<Gender>Male</Gender>
+		<Phone>635-95-57-176</Phone>
+		<Address>Ap #175-6690 Lobortis, Rd.</Address>
+		<Username>malesuada</Username>
+		<Password>Lorem</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>93</ManagerId>
+		<Name>Caleb Hudson</Name>
+		<DOB>27/11/1968</DOB>
+		<Gender>Male</Gender>
+		<Phone>927-86-23-094</Phone>
+		<Address>P.O. Box 263, 2306 Nibh. Avenue</Address>
+		<Username>magna.</Username>
+		<Password>enim</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>94</ManagerId>
+		<Name>Herman Morrow</Name>
+		<DOB>30/05/1969</DOB>
+		<Gender>Male</Gender>
+		<Phone>823-00-57-528</Phone>
+		<Address>4635 Amet, St.</Address>
+		<Username>non,</Username>
+		<Password>sagittis.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>95</ManagerId>
+		<Name>Ulla H. Stark</Name>
+		<DOB>11/04/1968</DOB>
+		<Gender>Male</Gender>
+		<Phone>423-22-42-897</Phone>
+		<Address>P.O. Box 621, 283 Sit Avenue</Address>
+		<Username>quis</Username>
+		<Password>lectus</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>96</ManagerId>
+		<Name>Gabriel W. Rodriquez</Name>
+		<DOB>04/04/1980</DOB>
+		<Gender>Male</Gender>
+		<Phone>258-89-76-163</Phone>
+		<Address>917-771 Placerat, Road</Address>
+		<Username>Maecenas</Username>
+		<Password>sit</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>97</ManagerId>
+		<Name>Palmer S. Collins</Name>
+		<DOB>05/12/1954</DOB>
+		<Gender>Male</Gender>
+		<Phone>951-41-77-712</Phone>
+		<Address>8625 Pharetra Road</Address>
+		<Username>Sed</Username>
+		<Password>ac</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>98</ManagerId>
+		<Name>Jamalia Z. Clarke</Name>
+		<DOB>19/04/1969</DOB>
+		<Gender>Male</Gender>
+		<Phone>665-08-09-566</Phone>
+		<Address>P.O. Box 823, 2011 Sem. Av.</Address>
+		<Username>lacus</Username>
+		<Password>neque</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>99</ManagerId>
+		<Name>Dylan Osborne</Name>
+		<DOB>08/11/1955</DOB>
+		<Gender>Male</Gender>
+		<Phone>217-57-68-970</Phone>
+		<Address>2080 Pede. Road</Address>
+		<Username>placerat</Username>
+		<Password>sem.</Password>
+	</Manager>
+	<Manager>
+		<ManagerId>100</ManagerId>
+		<Name>Đào Duy Hùng</Name>
+		<DOB>01/01/1998</DOB>
+		<Gender>Male</Gender>
+		<Phone>0123456789</Phone>
+		<Address>Hải Dương</Address>
+		<Username>admin</Username>
+		<Password>admin</Password>
+	</Manager>
+</ManagerList>
