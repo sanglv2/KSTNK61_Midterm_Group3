@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServiceList>
+	<Service>
+		<ServiceId>1</ServiceId>
+		<Name>Điện</Name>
+		<Price>100000</Price>
+                <Status>True</Status>
+	</Service>
+	<Service>
+		<ServiceId>2</ServiceId>
+		<Name>Nước</Name>
+		<Price>200000</Price>
+                <Status>True</Status>
+	</Service>
+	<Service>
+		<ServiceId>3</ServiceId>
+		<Name>Internet</Name>
+		<Price>300000</Price>
+                <Status>True</Status>
+	</Service>
+	<Service>
+		<ServiceId>4</ServiceId>
+		<Name>Gửi xe</Name>
+		<Price>400000</Price>
+                <Status>True</Status>
+	</Service>
+</ServiceList>
