@@ -5,13 +5,13 @@
  */
 package Model;
 
-import Entity.List.ManagerList;
 import Entity.List.ServiceList;
-import Entity.Manager;
 import Entity.Service;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -22,9 +22,8 @@ import javax.xml.bind.Unmarshaller;
  */
 public class ServiceModel {
     
-    private List<Service> listService;
-    
     public static ServiceModel INST = new ServiceModel();
+    public static Map<Integer, Service> MAP;
     
     private ServiceModel() {
         warmup();
@@ -38,14 +37,17 @@ public class ServiceModel {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             ServiceList list = (ServiceList) jaxbUnmarshaller.unmarshal(new File("resource/service.xml"));
 
-            this.listService = list.getListService();
+            Map<Integer, Service> map = new HashMap<>();
+            list.getListService().forEach(service -> map.put(service.getServiceId(), service));
+            
+            MAP = map;
         } catch (JAXBException e) {
-            this.listService = new ArrayList<>();
+            MAP = new HashMap<>();
         }
     }
     
     public List<Service> getListAll() {
-        return this.listService;
+        return new ArrayList<>(MAP.values());
     }
     
 }

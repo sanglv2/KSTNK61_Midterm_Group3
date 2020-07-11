@@ -348,7 +348,8 @@ public class Management extends javax.swing.JFrame {
         int row = serviceTable.getSelectedRow();
         
         if (row >= 0) {
-            new ServiceInformation(this, ServiceModel.INST.getListAll().get(row)).setVisible(true);
+            int serviceId = (int) serviceModel.getValueAt(row, 0);
+            new ServiceInformation(this, ServiceModel.INST.MAP.get(serviceId)).setVisible(true);
         }
     }
 }
