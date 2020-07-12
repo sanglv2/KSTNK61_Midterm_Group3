@@ -17,4 +17,7 @@ public class Constants {
     public static final int SERVICE_STATUS_ACTIVE = 1;
     public static final int SERVICE_STATUS_DEACTIVE = 2;
     public static final int SERVICE_STATUS_DELETED = 4;
+    
+    public static final int INVOICE_ADD = 1;
+    public static final int INVOICE_UPDATE = 2;
 }

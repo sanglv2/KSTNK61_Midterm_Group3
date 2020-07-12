@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,8 +5,8 @@
  */
 package Model;
 
-import Entity.List.ManagerList;
-import Entity.Manager;
+import Entity.List.PaymentMethodList;
+import Entity.PaymentMethod;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,16 +20,16 @@ import javax.xml.bind.Unmarshaller;
  *
  * @author User
  */
-public class ManagerModel {
+public class PaymentMethodModel {
     
-    public static ManagerModel INST = new ManagerModel();
-    public static Map<Integer, Manager> MAP;
+    public static PaymentMethodModel INST = new PaymentMethodModel();
+    public static Map<Integer, PaymentMethod> MAP;
     
-    private ManagerModel() {
+    private PaymentMethodModel() {
         warmup();
     }
     
-    public List<Manager> getListAll() {
+    public List<PaymentMethod> getListAll() {
         return new ArrayList<>(MAP.values());
     }
 
@@ -38,12 +37,12 @@ public class ManagerModel {
         JAXBContext jaxbContext;
 
         try {
-            jaxbContext = JAXBContext.newInstance(ManagerList.class);
+            jaxbContext = JAXBContext.newInstance(PaymentMethodList.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            ManagerList list = (ManagerList) jaxbUnmarshaller.unmarshal(new File("resource/manager.xml"));
+            PaymentMethodList list = (PaymentMethodList) jaxbUnmarshaller.unmarshal(new File("resource/paymentmethod.xml"));
             
-            Map<Integer, Manager> map = new HashMap<>();
-            list.getListManager().forEach(manager -> map.put(manager.getManagerId(), manager));
+            Map<Integer, PaymentMethod> map = new HashMap<>();
+            list.getListPaymentMethod().forEach(paymentMethod -> map.put(paymentMethod.getPaymentMethodId(), paymentMethod));
             
             MAP = map;
         } catch (JAXBException e) {

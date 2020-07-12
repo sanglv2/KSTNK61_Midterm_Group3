@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,8 +5,8 @@
  */
 package Model;
 
-import Entity.List.ManagerList;
-import Entity.Manager;
+import Entity.List.RoomList;
+import Entity.Room;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,16 +20,16 @@ import javax.xml.bind.Unmarshaller;
  *
  * @author User
  */
-public class ManagerModel {
+public class RoomModel {
     
-    public static ManagerModel INST = new ManagerModel();
-    public static Map<Integer, Manager> MAP;
+    public static RoomModel INST = new RoomModel();
+    public static Map<String, Room> MAP;
     
-    private ManagerModel() {
+    private RoomModel() {
         warmup();
     }
     
-    public List<Manager> getListAll() {
+    public List<Room> getListAll() {
         return new ArrayList<>(MAP.values());
     }
 
@@ -38,16 +37,20 @@ public class ManagerModel {
         JAXBContext jaxbContext;
 
         try {
-            jaxbContext = JAXBContext.newInstance(ManagerList.class);
+            jaxbContext = JAXBContext.newInstance(RoomList.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            ManagerList list = (ManagerList) jaxbUnmarshaller.unmarshal(new File("resource/manager.xml"));
+            RoomList list = (RoomList) jaxbUnmarshaller.unmarshal(new File("resource/room.xml"));
             
-            Map<Integer, Manager> map = new HashMap<>();
-            list.getListManager().forEach(manager -> map.put(manager.getManagerId(), manager));
+            Map<String, Room> map = new HashMap<>();
+            list.getListRoom().forEach(room -> map.put(room.getRoomId(), room));
             
             MAP = map;
         } catch (JAXBException e) {
             MAP = new HashMap<>();
         }
+    }
+    
+    public static void main(String[] args) {
+        List<Room> listAll = INST.getListAll();
     }
 }

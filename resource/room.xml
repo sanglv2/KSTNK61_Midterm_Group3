@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RoomList>
+	<Room>
+            <RoomId>A101</RoomId>
+            <Description>Phòng 1 khách 2 ngủ</Description>
+	</Room>
+	<Room>
+            <RoomId>A102</RoomId>
+            <Description>Phòng 1 khách 3 ngủ</Description>
+	</Room>
+</RoomList>

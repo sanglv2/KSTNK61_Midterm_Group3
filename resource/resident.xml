@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResidentList>
+	<Resident>
+            <ResidentId>1</ResidentId>
+            <Name>Nguyễn Văn Cư Dân</Name>
+            <Gender>1</Gender>
+            <DOB>01/01/1998</DOB>
+            <Phone>0123564833</Phone>
+            <PeopleId>021170093</PeopleId>
+            <RoomId>A101</RoomId>
+	</Resident>
+	<Resident>
+            <ResidentId>2</ResidentId>
+            <Name>Trần Thị Dân Cư</Name>
+            <Gender>1</Gender>
+            <DOB>02/12/1998</DOB>
+            <Phone>0976385905</Phone>
+            <PeopleId>030098001157</PeopleId>
+            <RoomId>A102</RoomId>
+	</Resident>
+</ResidentList>

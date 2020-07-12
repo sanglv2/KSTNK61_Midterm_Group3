@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InvoiceList>
+    <Invoice>
+        <InvoiceId>1</InvoiceId>
+        <Date>01/01/2020</Date>
+        <PaymentDate>01/01/2020</PaymentDate>
+        <PaymentMethodId>2</PaymentMethodId>
+        <ManagerId>100</ManagerId>
+        <ResidentId>1</ResidentId>
+    </Invoice>
+    <Invoice>
+        <InvoiceId>2</InvoiceId>
+        <Date>01/01/2020</Date>
+        <PaymentDate>01/01/2020</PaymentDate>
+        <PaymentMethodId>1</PaymentMethodId>
+        <ManagerId>100</ManagerId>
+        <ResidentId>2</ResidentId>
+    </Invoice>
+</InvoiceList>
