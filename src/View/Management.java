@@ -443,7 +443,7 @@ public class Management extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new InvoiceInformation(this, null, Constants.INVOICE_ADD).setVisible(true);
+        new InvoiceInformation(this, manager, null, Constants.INVOICE_ADD).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void invoiceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceTableMouseClicked
@@ -582,7 +582,7 @@ public class Management extends javax.swing.JFrame {
 
         if (row >= 0) {
             int invoiceId = (int) ((DefaultTableModel) invoiceTable.getModel()).getValueAt(row, 0);
-            new InvoiceInformation(this, InvoiceModel.INST.MAP.get(invoiceId), Constants.INVOICE_UPDATE).setVisible(true);
+            new InvoiceInformation(this, null, InvoiceModel.INST.MAP.get(invoiceId), Constants.INVOICE_UPDATE).setVisible(true);
         }
     }
     

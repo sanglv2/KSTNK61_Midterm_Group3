@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 public class InvoiceInformation extends javax.swing.JDialog {
 
     private Management management;
+    private Manager manager;
     private Invoice invoice;
     private int invoiceAction;
     /**
@@ -35,11 +36,12 @@ public class InvoiceInformation extends javax.swing.JDialog {
         initComponents();
     }
     
-    public InvoiceInformation(Management management, Invoice invoice, int invoiceAction) {
+    public InvoiceInformation(Management management, Manager manager, Invoice invoice, int invoiceAction) {
         super(management, true);
         initComponents();
 
         this.management = management;
+        this.manager = manager;
         this.invoice = invoice;
         this.invoiceAction = invoiceAction;
 
@@ -247,6 +249,7 @@ public class InvoiceInformation extends javax.swing.JDialog {
     private void initInvoiceInfomation() {
         if (invoiceAction == Constants.INVOICE_ADD) {
             jButton1.setText("Thêm hóa đơn");
+            jTextField2.setEditable(false);
             
             initPaymentMethodComboBox(false);
             initManagerComboBox(false);
@@ -280,6 +283,9 @@ public class InvoiceInformation extends javax.swing.JDialog {
         
         if (setSelectedValue) {
             model.setSelectedItem(ManagerModel.INST.MAP.get(invoice.getManagerId()));
+        } else {
+            model.setSelectedItem(manager);
+            jComboBox2.setEnabled(false);
         }
     }
     

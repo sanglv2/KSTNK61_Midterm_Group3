@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <PaymentMethodList>
 	<PaymentMethod>
+		<PaymentMethodId>0</PaymentMethodId>
+                <Name>Chưa thanh toán</Name>
+                <Status>1</Status>
+	</PaymentMethod>
+	<PaymentMethod>
 		<PaymentMethodId>1</PaymentMethodId>
                 <Name>Tiền mặt</Name>
                 <Status>1</Status>
