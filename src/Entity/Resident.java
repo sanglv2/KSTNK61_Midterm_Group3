@@ -23,7 +23,7 @@ public class Resident {
     @XmlElement(name = "Name")
     private String name;
     @XmlElement(name = "Gender")
-    private String gender;
+    private int gender;
     @XmlElement(name = "DOB")
     private String dob;
     @XmlElement(name = "Phone")
@@ -32,11 +32,13 @@ public class Resident {
     private String peopleId;
     @XmlElement(name = "RoomId")
     private String roomId;
+    @XmlElement(name = "Status")
+    private int status;
 
     public Resident() {
     }
 
-    public Resident(int residentId, String name, String gender, String dob, String phone, String peopleId, String roomId) {
+    public Resident(int residentId, String name, int gender, String dob, String phone, String peopleId, String roomId, int status) {
         this.residentId = residentId;
         this.name = name;
         this.gender = gender;
@@ -44,6 +46,7 @@ public class Resident {
         this.phone = phone;
         this.peopleId = peopleId;
         this.roomId = roomId;
+        this.status = status;
     }
 
     public int getResidentId() {
@@ -62,11 +65,11 @@ public class Resident {
         this.name = name;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
@@ -100,6 +103,14 @@ public class Resident {
 
     public void setRoomId(String roomId) {
         this.roomId = roomId;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override

@@ -6,14 +6,10 @@
 package View.Information;
 
 import Common.Constants;
-import Entity.Invoice;
-import Entity.Manager;
-import Entity.PaymentMethod;
 import Entity.Resident;
-import Model.InvoiceModel;
-import Model.ManagerModel;
-import Model.PaymentMethodModel;
+import Entity.Room;
 import Model.ResidentModel;
+import Model.RoomModel;
 import View.Management;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -22,28 +18,28 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-public class InvoiceInformation extends javax.swing.JDialog {
+public class ResidentInformation extends javax.swing.JDialog {
 
     private Management management;
-    private Invoice invoice;
-    private int invoiceAction;
+    private Resident resident;
+    private int residentAction;
     /**
-     * Creates new form NewJDialog
+     * Creates new form ResidentInformation
      */
-    public InvoiceInformation(java.awt.Frame parent, boolean modal) {
+    public ResidentInformation(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
     
-    public InvoiceInformation(Management management, Invoice invoice, int invoiceAction) {
+    public ResidentInformation(Management management, Resident resident, int residentAction) {
         super(management, true);
         initComponents();
 
         this.management = management;
-        this.invoice = invoice;
-        this.invoiceAction = invoiceAction;
+        this.resident = resident;
+        this.residentAction = residentAction;
 
-        initInvoiceInfomation();
+        initResidentInfomation();
         this.setLocationRelativeTo(management);
     }
 
@@ -56,33 +52,34 @@ public class InvoiceInformation extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jLabel4.setText("Ngày thanh toán");
-
-        jLabel5.setText("Phương thức thanh toán");
+        setTitle("Cư dân");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Thông tin hóa đơn");
+        jLabel1.setText("Thông tin cư dân");
 
-        jLabel3.setText("Quản lý");
+        jLabel3.setText("Số điện thoại");
 
-        jLabel2.setText("Ngày xuất đơn");
+        jLabel2.setText("Tên cư dân");
 
-        jLabel6.setText("Cư dân");
+        jLabel6.setText("Số chứng minh thư");
 
         jButton1.setText("Cập nhật");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +87,19 @@ public class InvoiceInformation extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Giới tính");
+
+        jLabel5.setText("Ngày sinh");
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Nam");
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Nữ");
+
+        jLabel7.setText("Số phòng");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,19 +115,24 @@ public class InvoiceInformation extends javax.swing.JDialog {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(jTextField1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBox1, 0, 185, Short.MAX_VALUE)
+                            .addComponent(jTextField1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton2))
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField3)
+                            .addComponent(jTextField4))))
+                .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(44, 44, 44))
+                .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,20 +145,25 @@ public class InvoiceInformation extends javax.swing.JDialog {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -153,32 +173,34 @@ public class InvoiceInformation extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (invoiceAction == Constants.INVOICE_ADD) {
-            String date = jTextField1.getText();
-            String paymentDate = jTextField2.getText();
-            PaymentMethod method = (PaymentMethod) jComboBox1.getSelectedItem();
-            Manager manager = (Manager) jComboBox2.getSelectedItem();
-            Resident resident = (Resident) jComboBox3.getSelectedItem();
-            
-            int invoiceId = InvoiceModel.INST.addInvoice(date, paymentDate, method.getPaymentMethodId(), manager.getManagerId(), resident.getResidentId());
-            if (invoiceId > 0) {
-                management.addInvoice(invoiceId, date, paymentDate, method, manager, resident);
-                JOptionPane.showMessageDialog(this, "Thêm hóa đơn mới thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
+        if (residentAction == Constants.RESIDENT_ADD) {
+            String name = jTextField1.getText();
+            int gender = jRadioButton1.isSelected() ? 1 : 0;
+            String dob = jTextField2.getText();
+            String phone = jTextField3.getText();
+            String peopleId = jTextField4.getText();
+            Room room = (Room) jComboBox1.getSelectedItem();
+
+            int residentId = ResidentModel.INST.addResident(name, gender, dob, phone, peopleId, room.getRoomId());
+            if (residentId > 0) {
+                management.addResident(residentId, name, gender, dob, phone, peopleId, room);
+                JOptionPane.showMessageDialog(this, "Thêm cư dân mới thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
             }
-        } else if (invoiceAction == Constants.INVOICE_UPDATE) {
-            int invoiceId = invoice.getInvoiceId();
-            String date = jTextField1.getText();
-            String paymentDate = jTextField2.getText();
-            PaymentMethod paymentMethod = (PaymentMethod) jComboBox1.getSelectedItem();
-            Manager manager = (Manager) jComboBox2.getSelectedItem();
-            Resident resident = (Resident) jComboBox3.getSelectedItem();
+        } else if (residentAction == Constants.RESIDENT_UPDATE) {
+            int residentId = resident.getResidentId();
+            String name = jTextField1.getText();
+            int gender = jRadioButton1.isSelected() ? 1 : 0;
+            String dob = jTextField2.getText();
+            String phone = jTextField3.getText();
+            String peopleId = jTextField4.getText();
+            Room room = (Room) jComboBox1.getSelectedItem();
 
-            if (InvoiceModel.INST.updateInvoice(invoiceId, date, paymentDate, paymentMethod.getPaymentMethodId(), manager.getManagerId(), resident.getResidentId())) {
-                management.updateInvoice(invoiceId, date, paymentDate, paymentMethod, manager, resident);
-                JOptionPane.showMessageDialog(this, "Cập nhật hóa đơn thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
+            if (ResidentModel.INST.updateResident(residentId, name, gender, dob, phone, peopleId, room.getRoomId(), Constants.RESIDENT_STATUS_LIVE)) {
+                management.updateResident(residentId, name, gender, dob, phone, peopleId, room);
+                JOptionPane.showMessageDialog(this, "Cập nhật cư dân thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
@@ -203,21 +225,20 @@ public class InvoiceInformation extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InvoiceInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ResidentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InvoiceInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ResidentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InvoiceInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ResidentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InvoiceInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ResidentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                InvoiceInformation dialog = new InvoiceInformation(new javax.swing.JFrame(), true);
+                ResidentInformation dialog = new ResidentInformation(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -230,67 +251,52 @@ public class InvoiceInformation extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 
-    private void initInvoiceInfomation() {
-        if (invoiceAction == Constants.INVOICE_ADD) {
-            jButton1.setText("Thêm hóa đơn");
+    private void initResidentInfomation() {
+        if (residentAction == Constants.RESIDENT_ADD) {
+            jButton1.setText("Thêm cư dân");
             
-            initPaymentMethodComboBox(false);
-            initManagerComboBox(false);
-            initResidentComboBox(false);
-        } else if (invoiceAction == Constants.INVOICE_UPDATE) {
-            jTextField1.setText(invoice.getDate());
-            jTextField2.setText(invoice.getPaymentDate());
+            initRoomComboBox(false);
+        } else if (residentAction == Constants.RESIDENT_UPDATE) {
+            jTextField1.setText(resident.getName());
+            if (resident.getGender() == 1) {
+                jRadioButton1.setSelected(true);
+            } else {
+                jRadioButton2.setSelected(true);
+            }
+            jTextField2.setText(resident.getDob());
+            jTextField3.setText(resident.getPhone());
+            jTextField4.setText(resident.getPeopleId());
             
-            initPaymentMethodComboBox(true);
-            initManagerComboBox(true);
-            initResidentComboBox(true);
+            initRoomComboBox(true);
         }
     }
-    
-    private void initPaymentMethodComboBox(boolean setSelectedValue) {
+
+    private void initRoomComboBox(boolean setSelectedValue) {
         DefaultComboBoxModel model = (DefaultComboBoxModel) jComboBox1.getModel();
         
-        PaymentMethodModel.INST.getListAll()
-                .forEach(paymentMethod -> model.addElement(paymentMethod));
+        RoomModel.INST.getListAll()
+                .forEach(room -> model.addElement(room));
         
         if (setSelectedValue) {
-            model.setSelectedItem(PaymentMethodModel.INST.MAP.get(invoice.getPaymentMethodId()));
-        }
-    }
-    
-    private void initManagerComboBox(boolean setSelectedValue) {
-        DefaultComboBoxModel model = (DefaultComboBoxModel) jComboBox2.getModel();
-        
-        ManagerModel.INST.getListAll()
-                .forEach(manager -> model.addElement(manager));
-        
-        if (setSelectedValue) {
-            model.setSelectedItem(ManagerModel.INST.MAP.get(invoice.getManagerId()));
-        }
-    }
-    
-    private void initResidentComboBox(boolean setSelectedValue) {
-        DefaultComboBoxModel model = (DefaultComboBoxModel) jComboBox3.getModel();
-        
-        ResidentModel.INST.getListAll()
-                .forEach(resident -> model.addElement(resident));
-        
-        if (setSelectedValue) {
-            model.setSelectedItem(ResidentModel.INST.MAP.get(invoice.getResidentId()));
+            model.setSelectedItem(RoomModel.INST.MAP.get(resident.getRoomId()));
         }
     }
 }

@@ -20,4 +20,13 @@ public class Constants {
     
     public static final int INVOICE_ADD = 1;
     public static final int INVOICE_UPDATE = 2;
+    
+    public static final int INVOICE_STATUS_NOTPAY = 1;
+    public static final int INVOICE_STATUS_PAYED = 2;
+    
+    public static final int RESIDENT_ADD = 1;
+    public static final int RESIDENT_UPDATE = 2;
+    
+    public static final int RESIDENT_STATUS_LIVE = 1;
+    public static final int RESIDENT_STATUS_NOTLIVE = 2;
 }

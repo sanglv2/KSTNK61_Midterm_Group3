@@ -12,13 +12,16 @@ import Entity.Invoice;
 import Entity.Manager;
 import Entity.PaymentMethod;
 import Entity.Resident;
+import Entity.Room;
 import Entity.Service;
 import Model.InvoiceModel;
 import Model.ManagerModel;
 import Model.PaymentMethodModel;
 import Model.ResidentModel;
+import Model.RoomModel;
 import Model.ServiceModel;
 import View.Information.InvoiceInformation;
+import View.Information.ResidentInformation;
 import java.awt.HeadlessException;
 import java.util.List;
 import javax.swing.JLabel;
@@ -72,7 +75,12 @@ public class Management extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        residentTable = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -266,31 +274,98 @@ public class Management extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hóa đơn", jPanel2);
 
+        residentTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Mã cư dân", "Tên", "Giới tính", "Ngày sinh", "Số điện thoại", "Số CMT", "Số phòng"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        residentTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                residentTableMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(residentTable);
+        if (residentTable.getColumnModel().getColumnCount() > 0) {
+            residentTable.getColumnModel().getColumn(0).setResizable(false);
+            residentTable.getColumnModel().getColumn(1).setResizable(false);
+            residentTable.getColumnModel().getColumn(2).setResizable(false);
+            residentTable.getColumnModel().getColumn(3).setResizable(false);
+            residentTable.getColumnModel().getColumn(4).setResizable(false);
+            residentTable.getColumnModel().getColumn(5).setResizable(false);
+            residentTable.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        jButton8.setText("Xóa cư dân");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Cập nhật");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Tìm kiếm");
+
+        jButton11.setText("Thêm cư dân");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton9)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton10)))
+                .addContainerGap())
         );
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton11, jButton8, jButton9});
+
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8)
+                    .addComponent(jButton9)
+                    .addComponent(jButton10)
+                    .addComponent(jButton11))
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Thanh toán", jPanel3);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Phiếu thu", jPanel4);
+        jTabbedPane1.addTab("Cư dân", jPanel3);
 
         jMenu1.setText("Tài khoản");
 
@@ -363,27 +438,13 @@ public class Management extends javax.swing.JFrame {
         quitApplication();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        updateService();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void serviceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceTableMouseClicked
-        if (evt.getClickCount() == 2) {
-            updateService();
-        }
-    }//GEN-LAST:event_serviceTableMouseClicked
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new ServiceInformation(this, null, Constants.SERVICE_ADD).setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        removeService();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         updateInvoice();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new InvoiceInformation(this, null, Constants.INVOICE_ADD).setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void invoiceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceTableMouseClicked
         if (evt.getClickCount() == 2) {
@@ -391,9 +452,41 @@ public class Management extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_invoiceTableMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new InvoiceInformation(this, null, Constants.INVOICE_ADD).setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new ServiceInformation(this, null, Constants.SERVICE_ADD).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        updateService();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        removeService();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void serviceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceTableMouseClicked
+        if (evt.getClickCount() == 2) {
+            updateService();
+        }
+    }//GEN-LAST:event_serviceTableMouseClicked
+
+    private void residentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_residentTableMouseClicked
+        if (evt.getClickCount() == 2) {
+            updateResident();
+        }
+    }//GEN-LAST:event_residentTableMouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        updateResident();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        new ResidentInformation(this, null, Constants.RESIDENT_ADD).setVisible(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        removeResident();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -434,12 +527,16 @@ public class Management extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable invoiceTable;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -449,16 +546,18 @@ public class Management extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable residentTable;
     private javax.swing.JTable serviceTable;
     // End of variables declaration//GEN-END:variables
 
     private void initManagement() {
         loadServiceTable();
         loadInvoiceTable();
+        loadResidentTable();
     }
 
     private void quitApplication() {
@@ -486,16 +585,23 @@ public class Management extends javax.swing.JFrame {
             new InvoiceInformation(this, InvoiceModel.INST.MAP.get(invoiceId), Constants.INVOICE_UPDATE).setVisible(true);
         }
     }
+    
+    private void updateResident() {
+        int row = residentTable.getSelectedRow();
+
+        if (row >= 0) {
+            int residentId = (int) ((DefaultTableModel) residentTable.getModel()).getValueAt(row, 0);
+            new ResidentInformation(this, ResidentModel.INST.MAP.get(residentId), Constants.RESIDENT_UPDATE).setVisible(true);
+        }
+    }
 
     private void loadServiceTable() {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-        serviceTable.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
-        
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        serviceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+
         DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
-        while (serviceModel.getRowCount() > 0) {
-            serviceModel.removeRow(0);
-        }
+        serviceModel.setRowCount(0);
 
         List<Service> listService = ServiceModel.INST.getListAll();
         listService.forEach(service -> serviceModel.addRow(new Object[]{service.getServiceId(), service.getName(), service.getPrice(), (service.getStatus() & Constants.SERVICE_STATUS_ACTIVE) > 0}));
@@ -503,28 +609,41 @@ public class Management extends javax.swing.JFrame {
 
     private void loadInvoiceTable() {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-        invoiceTable.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
-        
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        invoiceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+
         DefaultTableModel invoiceModel = (DefaultTableModel) invoiceTable.getModel();
-        while (invoiceModel.getRowCount() > 0) {
-            invoiceModel.removeRow(0);
-        }
+        invoiceModel.setRowCount(0);
 
         List<Invoice> listInvoice = InvoiceModel.INST.getListAll();
         listInvoice.forEach(invoice -> invoiceModel.addRow(new Object[]{invoice.getInvoiceId(), invoice.getDate(), invoice.getPaymentDate(), PaymentMethodModel.INST.MAP.get(invoice.getPaymentMethodId()), ManagerModel.INST.MAP.get(invoice.getManagerId()), ResidentModel.INST.MAP.get(invoice.getResidentId())}));
+    }
+
+    private void loadResidentTable() {
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        residentTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        
+        DefaultTableModel residentModel = (DefaultTableModel) residentTable.getModel();
+        residentModel.setRowCount(0);
+        
+        List<Resident> listResident = ResidentModel.INST.getListAll();
+        listResident.forEach(resident -> residentModel.addRow(new Object[]{resident.getResidentId(), resident.getName(), resident.getGender() == 1 ? "Nam" : "Nữ", resident.getDob(), resident.getPhone(), resident.getPeopleId(), RoomModel.INST.MAP.get(resident.getRoomId())}));
     }
 
     public void addService(int serviceId, String name, int price, int status) {
         DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
         serviceModel.addRow(new Object[]{serviceId, name, price, (status & Constants.SERVICE_STATUS_ACTIVE) > 0});
     }
-    
-    
 
     public void addInvoice(int invoiceId, String date, String paymentDate, PaymentMethod method, Manager manager, Resident resident) {
         DefaultTableModel invoiceModel = (DefaultTableModel) invoiceTable.getModel();
         invoiceModel.addRow(new Object[]{invoiceId, date, paymentDate, method.getName(), manager.getName(), resident.getName()});
+    }
+    
+    public void addResident(int residentId, String name, int gender, String dob, String phone, String peopleId, Room room) {
+        DefaultTableModel residentModel = (DefaultTableModel) residentTable.getModel();
+        residentModel.addRow(new Object[]{residentId, name, gender == 1 ? "Nam" : "Nữ", dob, phone, peopleId, room});
     }
 
     public void updateService(int serviceId, String name, int price, int status) {
@@ -554,6 +673,21 @@ public class Management extends javax.swing.JFrame {
             }
         }
     }
+    
+    public void updateResident(int residentId, String name, int gender, String dob, String phone, String peopleId, Room room) {
+        DefaultTableModel residentModel = (DefaultTableModel) residentTable.getModel();
+        
+        for (int row = 0; row < residentModel.getRowCount(); row++) {
+            if ((int) residentModel.getValueAt(row, 0) == residentId) {
+                residentModel.setValueAt(name, row, 1);
+                residentModel.setValueAt(gender == 1 ? "Nam" : "Nữ", row, 2);
+                residentModel.setValueAt(dob, row, 3);
+                residentModel.setValueAt(phone, row, 4);
+                residentModel.setValueAt(peopleId, row, 5);
+                residentModel.setValueAt(room, row, 6);
+            }
+        }
+    }
 
     private void removeService() {
         int row = serviceTable.getSelectedRow();
@@ -564,25 +698,42 @@ public class Management extends javax.swing.JFrame {
 
             if (ServiceModel.INST.removeService(serviceId)) {
                 model.removeRow(row);
-                
+
                 JOptionPane.showMessageDialog(this, "Xóa dịch vụ thành công", "Thành công", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
-    
+
     private void removeInvoice() {
         int row = invoiceTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) invoiceTable.getModel();
-        
+
         if (row >= 0) {
             int invoiceId = (int) model.getValueAt(row, 0);
-            
+
             if (InvoiceModel.INST.removeInvoice(invoiceId)) {
                 model.removeRow(row);
-                
+
                 JOptionPane.showMessageDialog(this, "Xóa hóa đơn thành công", "Thành công", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+    
+    private void removeResident() {
+        int row = residentTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) residentTable.getModel();
+
+        if (row >= 0) {
+            int residentId = (int) model.getValueAt(row, 0);
+
+            if (ResidentModel.INST.removeResident(residentId)) {
+                model.removeRow(row);
+
+                JOptionPane.showMessageDialog(this, "Xóa dịch vụ thành công", "Thành công", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
             }
