@@ -5,25 +5,19 @@
  */
 package View;
 
-import Entity.Manager;
-import Model.ManagerModel;
 import java.awt.event.KeyEvent;
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author User
  */
-public class Login extends javax.swing.JFrame {
+public class LoginResident extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form LoginResident
      */
-    public Login() {
+    public LoginResident() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -35,14 +29,20 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Đăng nhập");
+
+        jButton1.setText("Đăng nhập");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Tài khoản");
 
@@ -50,20 +50,13 @@ public class Login extends javax.swing.JFrame {
 
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                login(evt);
+                jTextField1login(evt);
             }
         });
 
         jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                login(evt);
-            }
-        });
-
-        jButton1.setText("Đăng nhập");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jPasswordField1login(evt);
             }
         });
 
@@ -99,7 +92,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,11 +102,17 @@ public class Login extends javax.swing.JFrame {
         login();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void login(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_login
+    private void jTextField1login(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1login
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             login();
         }
-    }//GEN-LAST:event_login
+    }//GEN-LAST:event_jTextField1login
+
+    private void jPasswordField1login(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1login
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_jPasswordField1login
 
     /**
      * @param args the command line arguments
@@ -132,20 +131,20 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginResident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginResident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginResident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginResident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new LoginResident().setVisible(true);
             }
         });
     }
@@ -159,18 +158,6 @@ public class Login extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void login() {
-        String username = jTextField1.getText();
-        String password = jPasswordField1.getText();
-        
-        List<Manager> managers = ManagerModel.INST.getListAll().stream()
-                .filter(manager -> manager.getUsername().equals(username) && manager.getPassword().equals(password))
-                .collect(Collectors.toList());
-        
-        if (managers.size() > 0) {
-            new Management(managers.get(0)).setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Tài khoản hoặc mật khẩu không chính xác! Vui lòng đăng nhập lại.", "Đăng nhập thất bại", JOptionPane.WARNING_MESSAGE);
-        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
