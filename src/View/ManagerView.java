@@ -594,9 +594,9 @@ public class ManagerView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void initManagement() {
-        loadServiceTable();
-        loadInvoiceTable();
-        loadResidentTable();
+        loadServiceTable(ServiceModel.INST.getListAll());
+        loadInvoiceTable(InvoiceModel.INST.getListAll());
+        loadResidentTable(ResidentModel.INST.getListAll());
     }
 
     private void quitApplication() {
@@ -634,7 +634,7 @@ public class ManagerView extends javax.swing.JFrame {
         }
     }
 
-    private void loadServiceTable() {
+    public void loadServiceTable(List<Service> listService) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         serviceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
@@ -642,11 +642,10 @@ public class ManagerView extends javax.swing.JFrame {
         DefaultTableModel serviceModel = (DefaultTableModel) serviceTable.getModel();
         serviceModel.setRowCount(0);
 
-        List<Service> listService = ServiceModel.INST.getListAll();
         listService.forEach(service -> serviceModel.addRow(new Object[]{service.getServiceId(), service.getName(), service.getPrice(), (service.getStatus() & Constants.SERVICE_STATUS_ACTIVE) > 0}));
     }
 
-    private void loadInvoiceTable() {
+    public void loadInvoiceTable(List<Invoice> listInvoice) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         invoiceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
@@ -654,11 +653,10 @@ public class ManagerView extends javax.swing.JFrame {
         DefaultTableModel invoiceModel = (DefaultTableModel) invoiceTable.getModel();
         invoiceModel.setRowCount(0);
 
-        List<Invoice> listInvoice = InvoiceModel.INST.getListAll();
         listInvoice.forEach(invoice -> invoiceModel.addRow(new Object[]{invoice.getInvoiceId(), invoice.getDate(), invoice.getPaymentDate(), PaymentMethodModel.INST.MAP.get(invoice.getPaymentMethodId()), ManagerModel.INST.MAP.get(invoice.getManagerId()), ResidentModel.INST.MAP.get(invoice.getResidentId())}));
     }
 
-    private void loadResidentTable() {
+    public void loadResidentTable(List<Resident> listResident) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         residentTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
@@ -666,8 +664,7 @@ public class ManagerView extends javax.swing.JFrame {
         DefaultTableModel residentModel = (DefaultTableModel) residentTable.getModel();
         residentModel.setRowCount(0);
         
-        List<Resident> listResident = ResidentModel.INST.getListAll();
-        listResident.forEach(resident -> residentModel.addRow(new Object[]{resident.getResidentId(), resident.getName(), resident.getGender() == 1 ? "Nam" : "Nữ", resident.getDob(), resident.getPhone(), resident.getPeopleId(), RoomModel.INST.MAP.get(resident.getRoomId())}));
+        listResident.forEach(resident -> residentModel.addRow(new Object[]{resident.getResidentId(), resident.getName(), resident.getGender() == 1 ? "Nam" : "Nữ", resident.getDob(), resident.getPhone(), resident.getPeopleId(), RoomModel.INST.MAP.get(resident.getRoomId()), resident.getUsername()}));
     }
 
     public void addService(int serviceId, String name, int price, int status) {

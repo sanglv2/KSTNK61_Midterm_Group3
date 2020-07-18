@@ -5,18 +5,30 @@
  */
 package View.Search;
 
+import Entity.Resident;
+import Model.ResidentModel;
+import View.ManagerView;
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  *
  * @author User
  */
 public class ResidentSearch extends javax.swing.JDialog {
 
+    private ManagerView managerView;
     /**
      * Creates new form ResidentSearch
      */
     public ResidentSearch(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        this.managerView = (ManagerView) parent;
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -41,6 +53,11 @@ public class ResidentSearch extends javax.swing.JDialog {
         jLabel2.setText("Từ khóa");
 
         jButton1.setText("Tìm kiếm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,6 +93,30 @@ public class ResidentSearch extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        List<Resident> listInvoice = ResidentModel.INST.getListAll();
+        Field[] fields = Resident.class.getDeclaredFields();
+        String query = jTextField1.getText();
+        
+        List<Resident> listSearch = listInvoice.stream().filter(resident -> {
+            return Stream.of(fields).mapToInt(field -> {
+                field.setAccessible(true);
+                try {
+                    if (String.valueOf(field.get(resident)).toLowerCase().contains(query.toLowerCase())) {
+                        return 1;
+                    }
+                } catch (Exception e) {
+                }
+                field.setAccessible(false);
+                
+                return 0;
+            }).sum() > 0;
+        }).collect(Collectors.toList());
+        
+        managerView.loadResidentTable(listSearch);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
