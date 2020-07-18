@@ -6,7 +6,7 @@
 package View.Information;
 
 import Entity.Manager;
-import View.Management;
+import View.ManagerView;
 
 /**
  *
@@ -21,7 +21,7 @@ public class ManagerInformation extends javax.swing.JDialog {
         initComponents();
     }
     
-    public ManagerInformation(Management management, Manager manager) {
+    public ManagerInformation(ManagerView management, Manager manager) {
         super(management, true);
         initComponents();
         this.manager = manager;

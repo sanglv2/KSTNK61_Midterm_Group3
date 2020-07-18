@@ -14,7 +14,7 @@ import Model.InvoiceModel;
 import Model.ManagerModel;
 import Model.PaymentMethodModel;
 import Model.ResidentModel;
-import View.Management;
+import View.ManagerView;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  */
 public class InvoiceInformation extends javax.swing.JDialog {
 
-    private Management management;
+    private ManagerView management;
     private Manager manager;
     private Invoice invoice;
     private int invoiceAction;
@@ -36,7 +36,7 @@ public class InvoiceInformation extends javax.swing.JDialog {
         initComponents();
     }
     
-    public InvoiceInformation(Management management, Manager manager, Invoice invoice, int invoiceAction) {
+    public InvoiceInformation(ManagerView management, Manager manager, Invoice invoice, int invoiceAction) {
         super(management, true);
         initComponents();
 

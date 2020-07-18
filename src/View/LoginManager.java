@@ -168,7 +168,7 @@ public class LoginManager extends javax.swing.JFrame {
                 .collect(Collectors.toList());
         
         if (managers.size() > 0) {
-            new Management(managers.get(0)).setVisible(true);
+            new ManagerView(managers.get(0)).setVisible(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Tài khoản hoặc mật khẩu không chính xác! Vui lòng đăng nhập lại.", "Đăng nhập thất bại", JOptionPane.WARNING_MESSAGE);

@@ -38,14 +38,14 @@ public class ResidentModel {
                 .collect(Collectors.toList());
     }
     
-    public int addResident(String name, int gender, String dob, String phone, String peopleId, String roomId) {
+    public int addResident(String name, int gender, String dob, String phone, String peopleId, String roomId, String username, String password) {
         JAXBContext jaxbContext;
 
         try {
             List<Resident> listResident = getListAll();
 
             int residentId = MAP.keySet().stream().collect(Collectors.maxBy(Integer::compare)).orElse(0) + 1;
-            Resident resident = new Resident(residentId, name, gender, dob, phone, peopleId, roomId, Constants.RESIDENT_STATUS_LIVE);
+            Resident resident = new Resident(residentId, name, gender, dob, phone, peopleId, roomId, username, password, Constants.RESIDENT_STATUS_LIVE);
             listResident.add(resident);
 
             ResidentList residentList = new ResidentList();
@@ -64,14 +64,14 @@ public class ResidentModel {
         }
     }
 
-    public boolean updateResident(int residentId, String name, int gender, String dob, String phone, String peopleId, String roomId, int status) {
+    public boolean updateResident(int residentId, String name, int gender, String dob, String phone, String peopleId, String roomId, String username, String password, int status) {
         JAXBContext jaxbContext;
 
         try {
             Map<Integer, Resident> map = MAP;
 
             if (map.containsKey(residentId)) {
-                map.put(residentId, new Resident(residentId, name, gender, dob, phone, peopleId, roomId, status));
+                map.put(residentId, new Resident(residentId, name, gender, dob, phone, peopleId, roomId, username, password, status));
             }
 
             List<Resident> listResident = new ArrayList<>(map.values());
@@ -94,7 +94,7 @@ public class ResidentModel {
 
     public boolean removeResident(int residentId) {
         Resident resident = MAP.get(residentId);
-        return updateResident(residentId, resident.getName(), resident.getGender(), resident.getDob(), resident.getPhone(), resident.getPeopleId(), resident.getRoomId(), Constants.RESIDENT_STATUS_NOTLIVE);
+        return updateResident(residentId, resident.getName(), resident.getGender(), resident.getDob(), resident.getPhone(), resident.getPeopleId(), resident.getRoomId(), resident.getUsername(), resident.getPassword(),Constants.RESIDENT_STATUS_NOTLIVE);
     }
 
     private void warmup() {

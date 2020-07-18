@@ -10,7 +10,7 @@ import Entity.Resident;
 import Entity.Room;
 import Model.ResidentModel;
 import Model.RoomModel;
-import View.Management;
+import View.ManagerView;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class ResidentInformation extends javax.swing.JDialog {
 
-    private Management management;
+    private ManagerView management;
     private Resident resident;
     private int residentAction;
     /**
@@ -31,7 +31,7 @@ public class ResidentInformation extends javax.swing.JDialog {
         initComponents();
     }
     
-    public ResidentInformation(Management management, Resident resident, int residentAction) {
+    public ResidentInformation(ManagerView management, Resident resident, int residentAction) {
         super(management, true);
         initComponents();
 
@@ -195,15 +195,18 @@ public class ResidentInformation extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String name = jTextField1.getText();
+        int gender = jRadioButton1.isSelected() ? 1 : 0;
+        String dob = jTextField2.getText();
+        String phone = jTextField3.getText();
+        String peopleId = jTextField4.getText();
+        Room room = (Room) jComboBox1.getSelectedItem();
+        String username = jTextField5.getText();
+        String password = jPasswordField1.getText();
+            
         if (residentAction == Constants.RESIDENT_ADD) {
-            String name = jTextField1.getText();
-            int gender = jRadioButton1.isSelected() ? 1 : 0;
-            String dob = jTextField2.getText();
-            String phone = jTextField3.getText();
-            String peopleId = jTextField4.getText();
-            Room room = (Room) jComboBox1.getSelectedItem();
-
-            int residentId = ResidentModel.INST.addResident(name, gender, dob, phone, peopleId, room.getRoomId());
+            int residentId = ResidentModel.INST.addResident(name, gender, dob, phone, peopleId, room.getRoomId(), username, password);
+            
             if (residentId > 0) {
                 management.addResident(residentId, name, gender, dob, phone, peopleId, room);
                 JOptionPane.showMessageDialog(this, "Thêm cư dân mới thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
@@ -213,14 +216,8 @@ public class ResidentInformation extends javax.swing.JDialog {
             }
         } else if (residentAction == Constants.RESIDENT_UPDATE) {
             int residentId = resident.getResidentId();
-            String name = jTextField1.getText();
-            int gender = jRadioButton1.isSelected() ? 1 : 0;
-            String dob = jTextField2.getText();
-            String phone = jTextField3.getText();
-            String peopleId = jTextField4.getText();
-            Room room = (Room) jComboBox1.getSelectedItem();
-
-            if (ResidentModel.INST.updateResident(residentId, name, gender, dob, phone, peopleId, room.getRoomId(), Constants.RESIDENT_STATUS_LIVE)) {
+            
+            if (ResidentModel.INST.updateResident(residentId, name, gender, dob, phone, peopleId, room.getRoomId(), username, password, Constants.RESIDENT_STATUS_LIVE)) {
                 management.updateResident(residentId, name, gender, dob, phone, peopleId, room);
                 JOptionPane.showMessageDialog(this, "Cập nhật cư dân thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();

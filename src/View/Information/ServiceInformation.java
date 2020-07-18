@@ -8,7 +8,7 @@ package View.Information;
 import Common.Constants;
 import Entity.Service;
 import Model.ServiceModel;
-import View.Management;
+import View.ManagerView;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class ServiceInformation extends javax.swing.JDialog {
 
-    private Management management;
+    private ManagerView management;
     private Service service;
     private int serviceAction;
 
@@ -26,7 +26,7 @@ public class ServiceInformation extends javax.swing.JDialog {
         initComponents();
     }
 
-    public ServiceInformation(Management management, Service service, int serviceAction) {
+    public ServiceInformation(ManagerView management, Service service, int serviceAction) {
         super(management, true);
         initComponents();
 
