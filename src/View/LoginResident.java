@@ -23,6 +23,7 @@ public class LoginResident extends javax.swing.JFrame {
      */
     public LoginResident() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -53,12 +54,14 @@ public class LoginResident extends javax.swing.JFrame {
 
         jLabel2.setText("Mật khẩu");
 
+        jTextField1.setText("dannvc");
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField1login(evt);
             }
         });
 
+        jPasswordField1.setText("1");
         jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordField1login(evt);

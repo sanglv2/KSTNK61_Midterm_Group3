@@ -8,7 +8,9 @@ package Model;
 import Entity.Invoice;
 import Entity.List.InvoiceList;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -112,6 +114,13 @@ public class InvoiceModel {
         } finally {
             warmup();
         }
+    }
+    
+    public boolean payInvoice(int invoiceId, int paymentMethodId) {
+        Invoice invoice = MAP.get(invoiceId);
+        
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        return updateInvoice(invoiceId, invoice.getDate(), format.format(new Date()), paymentMethodId, invoice.getManagerId(), invoice.getResidentId());
     }
 
     private void warmup() {

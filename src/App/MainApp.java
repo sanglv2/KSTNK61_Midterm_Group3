@@ -6,6 +6,7 @@
 package App;
 
 import View.LoginManager;
+import View.LoginResident;
 
 /**
  *
@@ -14,7 +15,7 @@ import View.LoginManager;
 public class MainApp {
     
     public static void main(String[] args) {
-        new LoginManager().setVisible(true);
+        new LoginResident().setVisible(true);
     }
     
 }

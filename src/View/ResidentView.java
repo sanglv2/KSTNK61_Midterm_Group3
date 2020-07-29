@@ -5,8 +5,18 @@
  */
 package View;
 
+import Entity.Invoice;
 import Entity.Resident;
+import Model.InvoiceDetailModel;
+import Model.InvoiceModel;
+import Model.ManagerModel;
 import View.Information.InvoiceDetailInformation;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,6 +24,7 @@ import View.Information.InvoiceDetailInformation;
  */
 public class ResidentView extends javax.swing.JFrame {
 
+    private DefaultTableModel model;
     private Resident resident;
     /**
      * Creates new form Resident
@@ -25,7 +36,8 @@ public class ResidentView extends javax.swing.JFrame {
     public ResidentView(Resident resident) {
         this();
         this.resident = resident;
-        initResident();
+        this.model = (DefaultTableModel) invoiceTable.getModel();
+        loadInvoiceTable(InvoiceModel.INST.getListAll());
         this.setLocationRelativeTo(null);
     }
 
@@ -38,13 +50,15 @@ public class ResidentView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         invoiceTable = new javax.swing.JTable();
         jButton7 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -61,19 +75,38 @@ public class ResidentView extends javax.swing.JFrame {
             new String [] {
                 "Mã hóa đơn", "Ngày xuất", "Quản lý", "Tổng số tiền"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(invoiceTable);
+        if (invoiceTable.getColumnModel().getColumnCount() > 0) {
+            invoiceTable.getColumnModel().getColumn(0).setResizable(false);
+            invoiceTable.getColumnModel().getColumn(1).setResizable(false);
+            invoiceTable.getColumnModel().getColumn(2).setResizable(false);
+            invoiceTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jButton7.setText("Tìm kiếm");
 
-        jButton1.setText("Chi tiết hóa đơn");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Thanh toán");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Thanh toán");
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Thẻ");
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Tiền mặt");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -84,16 +117,17 @@ public class ResidentView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jRadioButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jRadioButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton7)))
                 .addContainerGap())
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton7});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jButton7});
 
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,8 +137,9 @@ public class ResidentView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addContainerGap())
         );
 
@@ -149,9 +184,22 @@ public class ResidentView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new InvoiceDetailInformation(this, true).setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int row = invoiceTable.getSelectedRow();
+        
+        if (row >= 0) {
+            int invoiceId = (int) model.getValueAt(row, 0);
+            
+            if (InvoiceModel.INST.payInvoice(invoiceId, jRadioButton1.isSelected() ? 1 : 2)) {
+                model.removeRow(row);
+                JOptionPane.showMessageDialog(this, "Thanh toán thành công", "Thành công", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,8 +238,8 @@ public class ResidentView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTable invoiceTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton7;
     private javax.swing.JMenu jMenu1;
@@ -201,11 +249,30 @@ public class ResidentView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void initResident() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void loadInvoiceTable(List<Invoice> listInvoice) {
+        listInvoice = listInvoice.stream()
+                .filter(invoice -> invoice.getResidentId() == resident.getResidentId() && invoice.getPaymentDate().isEmpty())
+                .collect(Collectors.toList());
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        invoiceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+
+        model.setRowCount(0);
+
+        listInvoice.forEach(invoice -> {
+            int sum = InvoiceDetailModel.INST.getListAll().stream()
+                    .filter(invoiceDetail -> invoiceDetail.getInvoiceId() == invoice.getInvoiceId())
+                    .mapToInt(invoiceDetail -> invoiceDetail.getQuantity() * invoiceDetail.getPrice())
+                    .sum();
+            
+            model.addRow(new Object[]{invoice.getInvoiceId(), invoice.getDate(), ManagerModel.INST.MAP.get(invoice.getManagerId()), sum});
+        });
     }
 }

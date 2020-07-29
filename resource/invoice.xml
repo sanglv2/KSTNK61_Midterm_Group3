@@ -27,8 +27,8 @@
     <Invoice>
         <InvoiceId>4</InvoiceId>
         <Date></Date>
-        <PaymentDate></PaymentDate>
-        <PaymentMethodId>0</PaymentMethodId>
+        <PaymentDate>30/07/2020</PaymentDate>
+        <PaymentMethodId>1</PaymentMethodId>
         <ManagerId>100</ManagerId>
         <ResidentId>1</ResidentId>
     </Invoice>
