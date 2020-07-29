@@ -16,4 +16,28 @@
         <ManagerId>100</ManagerId>
         <ResidentId>2</ResidentId>
     </Invoice>
+    <Invoice>
+        <InvoiceId>3</InvoiceId>
+        <Date></Date>
+        <PaymentDate></PaymentDate>
+        <PaymentMethodId>0</PaymentMethodId>
+        <ManagerId>100</ManagerId>
+        <ResidentId>1</ResidentId>
+    </Invoice>
+    <Invoice>
+        <InvoiceId>4</InvoiceId>
+        <Date></Date>
+        <PaymentDate></PaymentDate>
+        <PaymentMethodId>0</PaymentMethodId>
+        <ManagerId>100</ManagerId>
+        <ResidentId>1</ResidentId>
+    </Invoice>
+    <Invoice>
+        <InvoiceId>5</InvoiceId>
+        <Date></Date>
+        <PaymentDate></PaymentDate>
+        <PaymentMethodId>0</PaymentMethodId>
+        <ManagerId>100</ManagerId>
+        <ResidentId>1</ResidentId>
+    </Invoice>
 </InvoiceList>

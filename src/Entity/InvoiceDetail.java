@@ -25,16 +25,19 @@ public class InvoiceDetail {
     @XmlElement(name = "ServiceId")
     private int serviceId;
     @XmlElement(name = "Quantity")
-    private double quantity;
-
+    private int quantity;
+    @XmlElement(name = "Price")
+    private int price;
+    
     public InvoiceDetail() {
     }
 
-    public InvoiceDetail(int invoiceDetailId, int invoiceId, int serviceId, double quantity) {
+    public InvoiceDetail(int invoiceDetailId, int invoiceId, int serviceId, int quantity, int price) {
         this.invoiceDetailId = invoiceDetailId;
         this.invoiceId = invoiceId;
         this.serviceId = serviceId;
         this.quantity = quantity;
+        this.price = price;
     }
 
     public int getInvoiceDetailId() {
@@ -61,11 +64,19 @@ public class InvoiceDetail {
         this.serviceId = serviceId;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

@@ -68,5 +68,10 @@ public class Service {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
 }

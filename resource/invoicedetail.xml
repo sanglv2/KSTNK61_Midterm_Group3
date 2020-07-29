@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <InvoiceDetailList>
-    <InvoiceDetail>
+    <Invoice>
         <InvoiceDetailId>1</InvoiceDetailId>
-        <InvoiceId>1</InvoiceId>
+        <InvoiceId>5</InvoiceId>
         <ServiceId>1</ServiceId>
-        <Quantity>1</Quantity>
-    </InvoiceDetail>
-    <InvoiceDetail>
-        <InvoiceDetailId>2</InvoiceDetailId>
-        <InvoiceId>2</InvoiceId>
-        <ServiceId>1</ServiceId>
-        <Quantity>1</Quantity>
-    </InvoiceDetail>
+        <Quantity>3.0</Quantity>
+        <Price>100000</Price>
+    </Invoice>
 </InvoiceDetailList>

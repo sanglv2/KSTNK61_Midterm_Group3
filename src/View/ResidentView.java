@@ -56,8 +56,7 @@ public class ResidentView extends javax.swing.JFrame {
 
         invoiceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Mã hóa đơn", "Ngày xuất", "Quản lý", "Tổng số tiền"

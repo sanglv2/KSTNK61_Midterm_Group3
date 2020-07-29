@@ -5,18 +5,36 @@
  */
 package View.Information;
 
+import Entity.Service;
+import Model.InvoiceDetailModel;
+import Model.ServiceModel;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
  */
 public class InvoiceDetailInformation extends javax.swing.JDialog {
 
+    private int invoiceId;
     /**
      * Creates new form InvoiceDetailInformation
      */
     public InvoiceDetailInformation(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public InvoiceDetailInformation(InvoiceInformation parent, int invoiceId) {
+        super(parent, true);
+        initComponents();
+        
+        this.invoiceId = invoiceId;
+        initServiceCombobox();
+        
+        this.setLocationRelativeTo(parent);
     }
 
     /**
@@ -40,8 +58,13 @@ public class InvoiceDetailInformation extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setText("Xác nhận");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("100");
+        jTextField2.setText("0");
 
         jLabel4.setText("Số lương sử dụng");
 
@@ -50,11 +73,15 @@ public class InvoiceDetailInformation extends javax.swing.JDialog {
 
         jLabel2.setText("Dịch vụ");
 
-        jTextField3.setText("3500");
+        jTextField3.setEditable(false);
 
         jLabel3.setText("Đơn giá");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Điện" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +130,26 @@ public class InvoiceDetailInformation extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Service service = (Service) jComboBox1.getSelectedItem();
+            int quantity = Integer.parseInt(jTextField2.getText());
+            
+            if (InvoiceDetailModel.INST.addService(invoiceId, service.getServiceId(), quantity, service.getPrice()) > 0) {
+                this.dispose();
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Xảy ra lỗi!", "Thất bại", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        Service service = (Service) jComboBox1.getSelectedItem();
+        jTextField3.setText("" + service.getPrice());
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -156,4 +203,17 @@ public class InvoiceDetailInformation extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private void initServiceCombobox() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) jComboBox1.getModel();
+        
+        List<Service> listService = ServiceModel.INST.getListAll();
+        
+        listService.forEach(service -> model.addElement(service));
+        
+        if (!listService.isEmpty()) {
+            Service service = listService.get(0);
+            jTextField3.setText("" + service.getPrice());
+        }
+    }
 }
